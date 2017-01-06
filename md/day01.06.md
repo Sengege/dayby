@@ -1,4 +1,4 @@
-### Daily 06/01 2017
+### Daily 2017-01-06
 
 - [ ] Machine learning
 
