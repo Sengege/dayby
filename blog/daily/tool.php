@@ -14,5 +14,5 @@ foreach ($info as $line){
 	echo $line;
 	echo "<br>";
 }
-#echo var_dump($info);
+echo var_dump($info);
 ?>
