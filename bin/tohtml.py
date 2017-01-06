@@ -1,6 +1,7 @@
 import markdown
 import os
 import codecs
+import urllib
 binpath='/Users/air/Documents/Dayby/bin'
 #from ./bin get previous path.The app root path.
 rootpath=binpath[:-4]
@@ -24,4 +25,9 @@ for md in mdfiles:
 	f.close()
 	fw.close()
 
-	
+os.system("git add ../md/")
+os.system("git add ../blog/daily/")
+os.system("git commit -m 'auto by python'")
+os.system("git push")
+hook=urllib.urlopen("http://zp.tristan.pub/daily/tool.php")
+print hook.read()	
