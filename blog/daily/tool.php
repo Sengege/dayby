@@ -14,5 +14,9 @@ foreach ($info as $line){
 	echo $line;
 	echo "<br>";
 }
-echo var_dump($info);
+if(empty($info)){
+	echo 'Not diff with Github';
+}else{
+	echo 'diff with Github';
+}
 ?>
