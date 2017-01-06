@@ -1,10 +1,22 @@
 <?php
-exec("ls",$mydir);
-foreach ($mydir as $name){
-	$sub=substr($name,-4,4);
-	if("html"==$sub){
-	echo $name."<br/>";
-	}
-}
+#exec("ls",$mydir);
+#foreach ($mydir as $name){
+#	$sub=substr($name,-4,4);
+#	if("html"==$sub){
+#	echo $name."<br/>";
+#	}
+#}
 #echo var_dump($mydir);
+exec("git fetch",$info);
+exec("git diff origin/master",$info);
+echo "<h3>Successful!<br/>";
+foreach ($info as $line){
+	echo $line;
+	echo "<br>";
+}
+if(empty($info)){
+	echo 'Not diff with Github';
+}else{
+	echo 'diff with Github';
+}
 ?>
