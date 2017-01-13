@@ -7,16 +7,12 @@
 #	}
 #}
 #echo var_dump($mydir);
-exec("git fetch",$info);
-exec("git diff origin/master",$info);
-echo "<h3>Successful!<br/>";
-foreach ($info as $line){
-	echo $line;
-	echo "<br>";
-}
-if(empty($info)){
-	echo 'Not diff with Github';
-}else{
-	echo 'diff with Github';
-}
+exec("nohup git fetch ",$fetch);
+exec("git merge origin/master ",$info);
+#exec("git status",$s);
+#echo var_dump($info);
+#echo "<h3>Successful!<br/>";
+#exec("whoami",$user);
+#echo var_dump($user);
+echo "lol";
 ?>
