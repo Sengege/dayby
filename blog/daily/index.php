@@ -72,7 +72,7 @@
 
           <li><a href="#">的杰出程序员</a></li>
         </ul>
-        <h3 class="muted"><a href="/">谁家二叔</a></h3>
+        <h3 class="muted"><a href="/">三月半</a></h3>
       </div>
 
       <hr>
@@ -87,7 +87,7 @@ foreach ($mydir as $name){
 }
 #echo var_dump($mydir);
 ?>
-      	
+
 
       <hr>
       <div class="footer">
@@ -113,6 +113,6 @@ foreach ($mydir as $name){
     <script src="../index_files/bootstrap-carousel.js"></script>
     <script src="../index_files/bootstrap-typeahead.js"></script>
 
-  
+
 
 </body></html>
