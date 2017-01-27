@@ -1,5 +1,55 @@
 <h2>关于毕业设计</h2>
 <hr />
+<h3>2017 年1月13日</h3>
+<p><code>matlab
+% Summary
+- 测试了request 可以通过cookie得到页面。
+但是默认没有运行js代码。
+- BeautifulSoup可以实现以前在pyspider上的所有功能！</code></p>
+<p><strong><em>BeautifulSoup属于内容的解析工具，应该再找一款合适的网页爬取工具，包括能够通过post登录之类的。</em></strong></p>
+<p>找到了一个叫Request的第三方库。功能据说比官方库urllib2要强大</p>
+<h4>Beautiful Soup  初体验</h4>
+<p>决定试一试beautiful soup看文档简介觉得挺简单的。。。</p>
+<p>试试看能不能用它来满足自己做爬虫的需求。</p>
+<p>```python</p>
+<h1>在Mac上 用</h1>
+<h1>pip install beautifulsoup4 就成功安装上了。也没有发现需要装什么依赖。</h1>
+<h1>发现需要单独安装html的解析器。  按照官方文档推荐用pip install lxml 安装lxml解析器。</h1>
+<p>安装也很顺利的成功了。没有像以前在windows下安装一样会报错。应该是windows默认没有装C库吧。</p>
+<p>```</p>
+<ul>
+<li>一些beautifulSoup的学习笔记</li>
+</ul>
+<p><code>python
+  from bs4 import BeautifulSoup
+  soup=BeautifulSoup("传入html的内容")
+  #BeautifulSoup这个函数会把传入的html解析成一些python的对象。
+  soup.a  #就是Tag 对象 是第一个a标签
+  #测试 通过urllib2 这个模块来打开一个网页读取全部网页内容
+  import urllib2 as paw #给它起个别名叫爪子
+  address="http://www.tristan.pub"
+  response＝paw.urlopen(address)
+  html＝response.read()#读取网页的内容。</code></p>
+<p>​</p>
+<h4>Resquests 初体验</h4>
+<p>先下载。同样是用</p>
+<blockquote>
+<p>pip install requests</p>
+</blockquote>
+<p>木有依赖库，直接搞定。不得不说用Python和类Linux系统真的会多活好多年！</p>
+<p>项目的一小步先解决post登录的问题</p>
+<p>想自动登录知乎，在知乎上搜到一个代码后。发现不能复制粘贴。傻傻的从源代码</p>
+<p>里面找到那段代码拷贝下来再用浏览器打开。然后又调代码格式。</p>
+<p>调完了之后忽然想到，直接禁用js不久可以了么。。。。于是禁用js试了一下果然可以。</p>
+<blockquote>
+<p>然后又发现作者留了Github里面还有12月份最新更新的版本。。。</p>
+</blockquote>
+<p><code>python
+测试结果
+简单通过刚才扒的代码生成了一个cookie
+通过requests 的session.cookies.load()函数载入cookie
+然后可以成功的用session.get()函数来访问知乎了。</code></p>
+<hr />
 <h3>2017 年 1月6日</h3>
 <p>毕设的题目是做一个基于网络爬虫的内容推荐系统。几个系统的设想如下</p>
 <ul>
